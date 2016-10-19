@@ -23,31 +23,6 @@ public class StarbuzzDatabaseHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         updateMyDatabase(db, 0, DB_VERSION);
 
-        /*
-        ContentValues espresso = new ContentValues();
-        espresso.put("NAME", "Espresso");
-        ContentValues americano = new ContentValues();
-        americano.put("NAME", "Americano");
-        ContentValues latte = new ContentValues();
-        latte.put("NAME", "Latte");
-        ContentValues mochachino = new ContentValues();
-        mochachino.put("NAME", "Mochachino");
-        ContentValues filter = new ContentValues();
-        filter.put("DESCRIPTION", "Filter");
-
-        db.execSQL("CREATE TABLE DRINK ("
-                + "_id INTEGER PRIMARY KEY AUTOINCREMENT, "
-                + "NAME TEXT, "
-                + "DESCRIPTION TEXT, "
-                + "IMAGE_RESOURCE_ID INTEGER);");
-
-        db.insert("DRINK", null, espresso);
-        db.insert("DRINK", null, americano);
-        db.insert("DRINK", null, latte);
-        db.insert("DRINK", null, mochachino);
-        db.insert("DRINK", null, filter);
-        */
-
     }
 
 
@@ -64,9 +39,9 @@ public class StarbuzzDatabaseHelper extends SQLiteOpenHelper {
                     + "NAME TEXT, "
                     + "DESCRIPTION TEXT, "
                     + "IMAGE_RESOURCE_ID INTEGER);");
-            insertDrink(db, "LatteD", "Espresso and steamed milk", R.drawable.latte);
-            insertDrink(db, "CappuccinoD", "Espresso, hot milk and steamed milk foam", R.drawable.cappuccino);
-            insertDrink(db, "FilterD", "Our best drip coffee", R.drawable.filter);
+            insertDrink(db, "Latte", "Espresso and steamed milk", R.drawable.latte);
+            insertDrink(db, "Cappuccino", "Espresso, hot milk and steamed milk foam", R.drawable.cappuccino);
+            insertDrink(db, "Filter", "Our best drip coffee", R.drawable.filter);
         }
         if (oldVersion < 2) {
             db.execSQL("ALTER TABLE DRINK ADD COLUMN FAVORITE NUMERIC;");
